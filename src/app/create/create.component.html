@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="submit()" >
+  <div class="form-group">
+    <label for="name">Tên sách</label>
+
+    <input type="text" class="form-control" formControlName='name' id="name" placeholder="Nhập tên sách">
+    <span class="text-danger" *ngIf="form?.controls?.name?.dirty && form && form?.controls?.name?.errors">
+      Cần nhập tên sách
+    </span>
+  </div>
+  <div class="form-group">
+    <label for="price">Tác giả</label>
+    <input type="text" class="form-control" formControlName='author' id="author" placeholder="Nhập tác giả">
+    <span class="text-danger" *ngIf="form?.controls?.author?.dirty && form?.controls?.author?.errors">Cần nhập tác giả</span>
+  </div><div class="form-group">
+    <label for="price">Mô tả</label>
+    <input type="text" class="form-control" formControlName='description' id="description" placeholder="Nhập mô tả">
+    <span class="text-danger" *ngIf="form?.controls?.description?.dirty && form?.controls?.description?.errors">Cần nhập mô tả</span>
+  </div>
+  <button class="btn btn-primary d-block mt-4" type="submit">Submit</button>
+</form>
+
